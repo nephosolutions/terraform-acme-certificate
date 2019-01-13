@@ -1,0 +1,8 @@
+# Compiled files
+*.tfplan
+
+*.tfstate
+*.tfstate.backup
+
+terraform.tfvars
+**/.terraform/*
