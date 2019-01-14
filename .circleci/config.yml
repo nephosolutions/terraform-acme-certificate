@@ -17,7 +17,7 @@ jobs:
   build:
     docker:
       - image: nephosolutions/terraform
-    parallelism: 2
+    parallelism: 1
     steps:
       - checkout
       - run:
@@ -27,8 +27,7 @@ jobs:
       - run:
           name: Run inegration tests with Test-Kitchen-Terraform
           command: |
-            KITCHENS="$(bundle exec kitchen list -b -l error | circleci tests split)"
-            bundle exec kitchen test ${KITCHENS} --destroy=always
+            bundle exec kitchen test $(bundle exec kitchen list -b -l error | circleci tests split) --destroy=always
 workflows:
   version: 2
   commit:
