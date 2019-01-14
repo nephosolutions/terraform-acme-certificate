@@ -1,4 +1,6 @@
 # Compiled files
+*.kitchen
+
 *.tfplan
 
 *.tfstate
