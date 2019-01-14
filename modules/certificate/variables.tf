@@ -12,12 +12,16 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+variable "acme_account_id" {
+  description = "The ACME account ID"
+}
+
 variable "acme_account_private_key" {
   description = "The ACME account private key used to request the certificate."
 }
 
 variable "dns_challenge" {
-  description = "The DNS challenge to use in fulfilling the request. https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges"
+  description = "The DNS challenge useed to fulfill the request."
   type        = "map"
 }
 

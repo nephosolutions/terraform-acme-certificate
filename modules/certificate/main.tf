@@ -30,10 +30,24 @@ resource "tls_private_key" "certificate" {
   algorithm = "RSA"
 }
 
+# This is required as the resource acme_certificate does use the argument registration_url anymore
+resource "null_resource" "dependency_acme_account_id" {
+  triggers = {
+    acme_account_id = "${var.acme_account_id}"
+  }
+}
+
 resource "tls_cert_request" "certificate" {
+  depends_on = [
+    "null_resource.dependency_acme_account_id"
+  ]
+
   key_algorithm   = "RSA"
   private_key_pem = "${tls_private_key.certificate.private_key_pem}"
-  dns_names       = ["${var.dns_names}"]
+  
+  dns_names = [
+    "${var.dns_names}"
+  ]
 
   subject {
     common_name = "${var.dns_names[0]}"
@@ -45,7 +59,9 @@ resource "acme_certificate" "certificate" {
   certificate_request_pem = "${tls_cert_request.certificate.cert_request_pem}"
   min_days_remaining      = "${var.min_days_remaining}"
 
-  dns_challenge     = ["${var.dns_challenge}"]
+  dns_challenge     = [
+    "${var.dns_challenge}"
+  ]
 }
 
 data "template_file" "fullchain" {

@@ -15,9 +15,13 @@ Example using dnsimple.com as dns challenge provider:
 ```hcl
 module "acme_certificate" {
   source  = "nephosolutions/certificate/acme"
-  version = "0.1.0"
+  version = "1.0.1"
 
-  dns_names     = ["www.example.com", "www2.example.com"]
+  dns_names     = [
+    "www.example.com",
+    "www2.example.com"
+  ]
+
   email_address = "info@example.com"
 
   dns_challenge = {
@@ -46,8 +50,8 @@ The `DNSIMPLE_OAUTH_TOKEN` could alternatively be set as runtime environment var
 
 | Name | Description |
 |------|-------------|
-| certificate | - |
-| fullchain | - |
-| private\_key | - |
+| certificate | The requested ACME certificate |
+| fullchain | The requested ACME certificate full chain |
+| private\_key | The requested ACME certificate private key |
 
 [1]: https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges

@@ -13,13 +13,16 @@
 #   limitations under the License.
 
 output "certificate" {
-  value = "${join("",acme_certificate.certificate.*.certificate_pem)}"
+  description = "The requested ACME certificate"
+  value       = "${acme_certificate.certificate.certificate_pem}"
 }
 
 output "private_key" {
-  value = "${join("",tls_private_key.certificate.*.private_key_pem)}"
+  description = "The requested ACME certificate private key"
+  value       = "${tls_private_key.certificate.private_key_pem}"
 }
 
 output "fullchain" {
-  value = "${join("",data.template_file.fullchain.*.rendered)}"
+  description = "The requested ACME certificate full chain"
+  value       = "${data.template_file.fullchain.rendered}"
 }

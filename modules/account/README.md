@@ -9,7 +9,7 @@ Example using dnsimple.com as dns challenge provider:
 ```hcl
 module "acme_account" {
   source  = "nephosolutions/certificate/acme//modules/account"
-  version = "0.1.0"
+  version = "1.0.1"
 
   email_address = "info@example.com"
 }
@@ -26,6 +26,6 @@ module "acme_account" {
 
 | Name | Description |
 |------|-------------|
-| id | - |
-| private\_key | - |
-| registration\_url | - |
+| id | The ACME account ID |
+| private\_key | The ACME account private key |
+| registration\_url | The ACME account registration URL |
