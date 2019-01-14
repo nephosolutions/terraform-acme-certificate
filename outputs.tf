@@ -13,13 +13,13 @@
 #   limitations under the License.
 
 output "certificate" {
-  value = "${join("",acme_certificate.certificate.*.certificate_pem)}"
+  value = "${module.acme_certificate.certificate}"
 }
 
 output "private_key" {
-  value = "${join("",tls_private_key.certificate.*.private_key_pem)}"
+  value = "${module.acme_certificate.private_key}"
 }
 
 output "fullchain" {
-  value = "${join("",data.template_file.fullchain.*.rendered)}"
+  value = "${module.acme_certificate.fullchain}"
 }

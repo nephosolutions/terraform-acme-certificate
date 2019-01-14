@@ -12,19 +12,21 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-module "acme_account" {
-  source  = "modules/account"
-
-  email_address = "${var.email_address}"
-  server_url    = "${var.server_url}"
+provider "acme" {
+  version = "~> 1.0"
+  
+  server_url = "${var.server_url}"
 }
 
-module "acme_certificate" {
-  source = "modules/certificate"
-  
-  acme_account_private_key = "${module.acme_account.private_key}"
+provider "tls" {
+  version = "~> 1.2"
+}
 
-  dns_challenge = "${var.dns_challenge}"
-  dns_names     = ["${var.dns_names}"]
-  server_url    = "${var.server_url}"
+resource "tls_private_key" "account" {
+  algorithm = "RSA"
+}
+
+resource "acme_registration" "account" {
+  account_key_pem = "${tls_private_key.account.private_key_pem}"
+  email_address   = "${var.email_address}"
 }

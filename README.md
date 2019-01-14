@@ -36,7 +36,7 @@ The `DNSIMPLE_OAUTH_TOKEN` could alternatively be set as runtime environment var
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| dns\_challenge | The DNS challenge to use in fulfilling the request. | map | - | yes |
+| dns\_challenge | The DNS challenge to fulfill the request. | map | - | yes |
 | dns\_names | A list of DNS domain names to register the certificate for. The fist one is the cetificate's common name, the primary domain that the certificate will be recognized for. | list | - | yes |
 | email\_address | The contact email address for the account. | string | - | yes |
 | min\_days\_remaining | ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed. | string | `30` | no |

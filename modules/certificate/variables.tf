@@ -12,18 +12,18 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+variable "acme_account_private_key" {
+  description = "The ACME account private key used to request the certificate."
+}
+
 variable "dns_challenge" {
-  description = "The DNS challenge to fulfill the request."
+  description = "The DNS challenge to use in fulfilling the request. https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges"
   type        = "map"
 }
 
 variable "dns_names" {
   description = "A list of DNS domain names to register the certificate for. The fist one is the cetificate's common name, the primary domain that the certificate will be recognized for."
   type        = "list"
-}
-
-variable "email_address" {
-  description = "The contact email address for the account."
 }
 
 variable "min_days_remaining" {

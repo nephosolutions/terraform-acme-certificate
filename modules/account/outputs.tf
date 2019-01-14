@@ -12,19 +12,14 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-module "acme_account" {
-  source  = "modules/account"
-
-  email_address = "${var.email_address}"
-  server_url    = "${var.server_url}"
+output "id" {
+  value = "${join("",acme_registration.account.*.id)}"
 }
 
-module "acme_certificate" {
-  source = "modules/certificate"
-  
-  acme_account_private_key = "${module.acme_account.private_key}"
+output "registration_url" {
+  value = "${join("",acme_registration.account.*.registration_url)}"
+}
 
-  dns_challenge = "${var.dns_challenge}"
-  dns_names     = ["${var.dns_names}"]
-  server_url    = "${var.server_url}"
+output "private_key" {
+  value = "${join("",tls_private_key.account.*.private_key_pem)}"
 }

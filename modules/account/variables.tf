@@ -12,23 +12,8 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-variable "dns_challenge" {
-  description = "The DNS challenge to fulfill the request."
-  type        = "map"
-}
-
-variable "dns_names" {
-  description = "A list of DNS domain names to register the certificate for. The fist one is the cetificate's common name, the primary domain that the certificate will be recognized for."
-  type        = "list"
-}
-
 variable "email_address" {
   description = "The contact email address for the account."
-}
-
-variable "min_days_remaining" {
-  description = "ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed."
-  default = "30"
 }
 
 variable "server_url" {
