@@ -12,6 +12,10 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+provider "acme" {  
+  server_url = "https://acme-staging-v02.api.letsencrypt.org/directory"
+}
+
 resource "random_pet" "1st_dns_name" {}
 
 resource "random_id" "2nd_dns_name" {
@@ -30,5 +34,4 @@ module "acme_certificate" {
   ]
 
   email_address = "${var.email_address}"
-  server_url    = "https://acme-staging-v02.api.letsencrypt.org/directory"
 }

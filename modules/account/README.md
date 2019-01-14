@@ -7,20 +7,25 @@ This submodule creates an ACME account which may be used to register multiple AC
 Example using dnsimple.com as dns challenge provider:
 
 ```hcl
+provider "acme" {  
+  server_url = "https://acme-v02.api.letsencrypt.org/directory"
+}
+
 module "acme_account" {
   source  = "nephosolutions/certificate/acme//modules/account"
-  version = "1.0.1"
+  version = "1.0.2"
 
   email_address = "info@example.com"
 }
 ```
+
+The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.letsencrypt.org/directory` for staging.
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | email\_address | The contact email address for the account. | string | - | yes |
-| server\_url | The Let's Encrypt server URL to use; defaults to production but can be set to 'https://acme-staging.api.letsencrypt.org/directory' for staging. | string | `https://acme-v02.api.letsencrypt.org/directory` | no |
 
 ## Outputs
 

@@ -16,7 +16,6 @@ module "acme_account" {
   source  = "modules/account"
 
   email_address = "${var.email_address}"
-  server_url    = "${var.server_url}"
 }
 
 module "acme_certificate" {
@@ -30,6 +29,4 @@ module "acme_certificate" {
   dns_names = [
     "${var.dns_names}"
   ]
-  
-  server_url = "${var.server_url}"
 }

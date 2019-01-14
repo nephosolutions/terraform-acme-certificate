@@ -7,9 +7,13 @@ This submodule creates an ACME certificate and requires an existing ACME account
 Example using dnsimple.com as dns challenge provider:
 
 ```hcl
+provider "acme" {  
+  server_url = "https://acme-v02.api.letsencrypt.org/directory"
+}
+
 module "acme_certificate" {
   source  = "nephosolutions/certificate/acme//modules/certificate"
-  version = "1.0.1"
+  version = "1.0.2"
 
   acme_account_id           = "${module.acme_account.id}"
   acme_account_private_key  = "${module.acme_account.private_key}"
@@ -29,7 +33,8 @@ module "acme_certificate" {
 }
 ```
 
-The `DNSIMPLE_OAUTH_TOKEN` could alternatively be set as runtime environment variable.
+* The `DNSIMPLE_OAUTH_TOKEN` could alternatively be set as runtime environment variable
+* The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.letsencrypt.org/directory` for staging
 
 ## Inputs
 
@@ -40,7 +45,6 @@ The `DNSIMPLE_OAUTH_TOKEN` could alternatively be set as runtime environment var
 | dns\_challenge | The DNS challenge useed to fulfill the request. | map | - | yes |
 | dns\_names | A list of DNS domain names to register the certificate for. The fist one is the cetificate's common name, the primary domain that the certificate will be recognized for. | list | - | yes |
 | min\_days\_remaining | ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed. | string | `30` | no |
-| server\_url | The Let's Encrypt server URL to use; defaults to production but can be set to 'https://acme-staging.api.letsencrypt.org/directory' for staging. | string | `https://acme-v02.api.letsencrypt.org/directory` | no |
 
 ## Outputs
 

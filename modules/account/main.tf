@@ -12,16 +12,6 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-provider "acme" {
-  version = "~> 1.0"
-  
-  server_url = "${var.server_url}"
-}
-
-provider "tls" {
-  version = "~> 1.2"
-}
-
 resource "tls_private_key" "account" {
   algorithm = "RSA"
 }

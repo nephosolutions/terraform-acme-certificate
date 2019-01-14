@@ -34,8 +34,3 @@ variable "min_days_remaining" {
   description = "ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed."
   default = "30"
 }
-
-variable "server_url" {
-  description = "The Let's Encrypt server URL to use; defaults to production but can be set to 'https://acme-staging.api.letsencrypt.org/directory' for staging."
-  default = "https://acme-v02.api.letsencrypt.org/directory"
-}

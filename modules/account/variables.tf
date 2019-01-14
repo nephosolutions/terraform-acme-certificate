@@ -15,8 +15,3 @@
 variable "email_address" {
   description = "The contact email address for the account."
 }
-
-variable "server_url" {
-  description = "The Let's Encrypt server URL to use; defaults to production but can be set to 'https://acme-staging.api.letsencrypt.org/directory' for staging."
-  default = "https://acme-v02.api.letsencrypt.org/directory"
-}
