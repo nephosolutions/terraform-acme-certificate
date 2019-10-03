@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.1.0] - 2019-10-03
+
+- renew existing certificates before deleting the old one
+
 ## [1.0.2] - 2019-01-14
 
 - bugfix
@@ -21,7 +25,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release
 
-[Unreleased]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v1.0.2...v1.1.0
 [1.0.2]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v0.1.0...v1.0.0

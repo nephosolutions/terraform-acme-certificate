@@ -48,6 +48,10 @@ resource "acme_certificate" "certificate" {
   dns_challenge = [
     "${var.dns_challenge}"
   ]
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 data "template_file" "fullchain" {
