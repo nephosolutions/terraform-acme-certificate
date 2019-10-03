@@ -7,7 +7,7 @@ This submodule creates an ACME certificate and requires an existing ACME account
 Example using dnsimple.com as dns challenge provider:
 
 ```hcl
-provider "acme" {  
+provider "acme" {
   server_url = "https://acme-v02.api.letsencrypt.org/directory"
 }
 
@@ -36,6 +36,8 @@ module "acme_certificate" {
 * The `DNSIMPLE_OAUTH_TOKEN` could alternatively be set as runtime environment variable
 * The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.letsencrypt.org/directory` for staging
 
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -53,5 +55,7 @@ module "acme_certificate" {
 | certificate | The requested ACME certificate |
 | fullchain | The requested ACME certificate full chain |
 | private\_key | The requested ACME certificate private key |
+
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 [1]: https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges

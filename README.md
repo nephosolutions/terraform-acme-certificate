@@ -13,13 +13,13 @@ The ACME provider responds to DNS challenges automatically by utilizing one of t
 Example using dnsimple.com as dns challenge provider:
 
 ```hcl
-provider "acme" {  
+provider "acme" {
   server_url = "https://acme-v02.api.letsencrypt.org/directory"
 }
 
 module "acme_certificate" {
   source  = "nephosolutions/certificate/acme"
-  version = "1.0.2"
+  version = "1.1.0"
 
   dns_names     = [
     "www.example.com",
@@ -41,6 +41,7 @@ module "acme_certificate" {
 * The `DNSIMPLE_OAUTH_TOKEN` could alternatively be set as runtime environment variable
 * The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.letsencrypt.org/directory` for staging
 
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -57,5 +58,7 @@ module "acme_certificate" {
 | certificate | The requested ACME certificate |
 | fullchain | The requested ACME certificate full chain |
 | private\_key | The requested ACME certificate private key |
+
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 [1]: https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges
