@@ -13,7 +13,7 @@ provider "acme" {
 
 module "acme_account" {
   source  = "nephosolutions/certificate/acme//modules/account"
-  version = "1.0.2"
+  version = "2.0.0"
 
   email_address = "info@example.com"
 }
@@ -22,12 +22,18 @@ module "acme_account" {
 The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.letsencrypt.org/directory` for staging.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| acme | n/a |
+| tls | n/a |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| email\_address | The contact email address for the account. | string | - | yes |
+|------|-------------|------|---------|:-----:|
+| email\_address | The contact email address for the account. | `any` | n/a | yes |
 
 ## Outputs
 

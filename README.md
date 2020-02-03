@@ -19,7 +19,7 @@ provider "acme" {
 
 module "acme_certificate" {
   source  = "nephosolutions/certificate/acme"
-  version = "1.1.0"
+  version = "2.0.0"
 
   dns_names     = [
     "www.example.com",
@@ -42,14 +42,18 @@ module "acme_certificate" {
 * The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.letsencrypt.org/directory` for staging
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+No provider.
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| dns\_challenge | The DNS challenge to fulfill the request. | map | - | yes |
-| dns\_names | A list of DNS domain names to register the certificate for. The fist one is the cetificate's common name, the primary domain that the certificate will be recognized for. | list | - | yes |
-| email\_address | The contact email address for the account. | string | - | yes |
-| min\_days\_remaining | ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed. | string | `30` | no |
+|------|-------------|------|---------|:-----:|
+| dns\_challenge | The [DNS challenge\|https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges] to use in fulfilling the request. | <pre>object({<br>    config   = map(string)<br>    provider = string<br>  })<br></pre> | n/a | yes |
+| dns\_names | A list of DNS domain names to register the certificate for. The fist one is the cetificate's common name, the primary domain that the certificate will be recognized for. | `list(string)` | n/a | yes |
+| email\_address | The contact email address for the account. | `any` | n/a | yes |
+| min\_days\_remaining | ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed. | `number` | `30` | no |
 
 ## Outputs
 

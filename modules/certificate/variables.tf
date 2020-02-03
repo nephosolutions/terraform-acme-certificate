@@ -21,16 +21,20 @@ variable "acme_account_private_key" {
 }
 
 variable "dns_challenge" {
-  description = "The DNS challenge useed to fulfill the request."
-  type        = "map"
+  description = "The [DNS challenge|https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges] to use in fulfilling the request."
+
+  type = object({
+    config   = map(string)
+    provider = string
+  })
 }
 
 variable "dns_names" {
   description = "A list of DNS domain names to register the certificate for. The fist one is the cetificate's common name, the primary domain that the certificate will be recognized for."
-  type        = "list"
+  type        = list(string)
 }
 
 variable "min_days_remaining" {
   description = "ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed."
-  default     = "30"
+  default     = 30
 }

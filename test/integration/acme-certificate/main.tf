@@ -16,22 +16,23 @@ provider "acme" {
   server_url = "https://acme-staging-v02.api.letsencrypt.org/directory"
 }
 
-resource "random_pet" "1st_dns_name" {}
+resource "random_pet" "dns_name_1" {
+}
 
-resource "random_id" "2nd_dns_name" {
+resource "random_id" "dns_name_2" {
   byte_length = 4
-  prefix      = "${random_pet.1st_dns_name.id}-"
+  prefix      = "${random_pet.dns_name_1.id}-"
 }
 
 module "acme_certificate" {
   source = "../../../"
 
-  dns_challenge = "${var.dns_challenge}"
+  dns_challenge = var.dns_challenge
 
   dns_names = [
-    "${random_pet.1st_dns_name.id}.${var.dns_domain}",
-    "${lower(random_id.2nd_dns_name.hex)}.${var.dns_domain}"
+    "${random_pet.dns_name_1.id}.${var.dns_domain}",
+    "${lower(random_id.dns_name_2.hex)}.${var.dns_domain}",
   ]
 
-  email_address = "${var.email_address}"
+  email_address = var.email_address
 }

@@ -33,5 +33,3 @@ suites:
   - name: acme-certificate
     driver:
       root_module_directory: test/integration/acme-certificate
-      variables:
-        server_url: "https://acme-staging-v02.api.letsencrypt.org/directory"

@@ -14,4 +14,5 @@
 
 dns_challenge = {
   provider = "dnsimple"
+  config   = {}
 }

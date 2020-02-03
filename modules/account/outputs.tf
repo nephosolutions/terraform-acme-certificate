@@ -14,15 +14,15 @@
 
 output "id" {
   description = "The ACME account ID"
-  value       = "${acme_registration.account.id}"
+  value       = acme_registration.account.id
 }
 
 output "registration_url" {
   description = "The ACME account registration URL"
-  value       = "${acme_registration.account.registration_url}"
+  value       = acme_registration.account.registration_url
 }
 
 output "private_key" {
   description = "The ACME account private key"
-  value       = "${tls_private_key.account.private_key_pem}"
+  value       = tls_private_key.account.private_key_pem
 }

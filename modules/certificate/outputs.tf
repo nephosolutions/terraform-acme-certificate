@@ -14,15 +14,15 @@
 
 output "certificate" {
   description = "The requested ACME certificate"
-  value       = "${acme_certificate.certificate.certificate_pem}"
+  value       = acme_certificate.certificate.certificate_pem
 }
 
 output "private_key" {
   description = "The requested ACME certificate private key"
-  value       = "${tls_private_key.certificate.private_key_pem}"
+  value       = tls_private_key.certificate.private_key_pem
 }
 
 output "fullchain" {
   description = "The requested ACME certificate full chain"
-  value       = "${data.template_file.fullchain.rendered}"
+  value       = data.template_file.fullchain.rendered
 }
