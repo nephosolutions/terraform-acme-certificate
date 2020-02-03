@@ -13,7 +13,7 @@ repos:
     rev: v1.1.7
     hooks:
       - id: insert-license
-        files: (Gemfile|.*\.(tf(vars)?|y?ml))$
+        files: (Gemfile|Makefile|.*\.(tf(vars)?|y?ml))$
         args:
         - --license-filepath
         - .license_header.txt
