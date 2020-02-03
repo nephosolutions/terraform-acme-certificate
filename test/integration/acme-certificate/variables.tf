@@ -14,7 +14,11 @@
 
 variable "dns_challenge" {
   description = "The [DNS challenge|https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges] to use in fulfilling the request."
-  type        = "map"
+
+  type = object({
+    config   = map(string)
+    provider = string
+  })
 }
 
 variable "dns_domain" {

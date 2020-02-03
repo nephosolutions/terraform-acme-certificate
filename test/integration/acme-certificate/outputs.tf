@@ -14,15 +14,15 @@
 
 output "certificate" {
   description = "The requested ACME certificate"
-  value       = "${module.acme_certificate.certificate}"
+  value       = module.acme_certificate.certificate
 }
 
 output "private_key" {
   description = "The requested ACME certificate private key"
-  value       = "${module.acme_certificate.private_key}"
+  value       = module.acme_certificate.private_key
 }
 
 output "fullchain" {
   description = "The requested ACME certificate full chain"
-  value       = "${module.acme_certificate.fullchain}"
+  value       = module.acme_certificate.fullchain
 }

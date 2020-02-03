@@ -12,13 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-
 version: 2
 jobs:
   build:
     docker:
-      - image: nephosolutions/terraform
+      - image: nephosolutions/terraform:0.12.8
     steps:
       - checkout
       - run:

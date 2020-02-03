@@ -13,7 +13,7 @@ provider "acme" {
 
 module "acme_certificate" {
   source  = "nephosolutions/certificate/acme//modules/certificate"
-  version = "1.0.2"
+  version = "2.0.0"
 
   acme_account_id           = "${module.acme_account.id}"
   acme_account_private_key  = "${module.acme_account.private_key}"
@@ -37,16 +37,24 @@ module "acme_certificate" {
 * The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.letsencrypt.org/directory` for staging
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| acme | n/a |
+| null | n/a |
+| template | n/a |
+| tls | n/a |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| acme\_account\_id | The ACME account ID | string | - | yes |
-| acme\_account\_private\_key | The ACME account private key used to request the certificate. | string | - | yes |
-| dns\_challenge | The DNS challenge useed to fulfill the request. | map | - | yes |
-| dns\_names | A list of DNS domain names to register the certificate for. The fist one is the cetificate's common name, the primary domain that the certificate will be recognized for. | list | - | yes |
-| min\_days\_remaining | ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed. | string | `30` | no |
+|------|-------------|------|---------|:-----:|
+| acme\_account\_id | The ACME account ID | `any` | n/a | yes |
+| acme\_account\_private\_key | The ACME account private key used to request the certificate. | `any` | n/a | yes |
+| dns\_challenge | The [DNS challenge\|https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges] to use in fulfilling the request. | <pre>object({<br>    config   = map(string)<br>    provider = string<br>  })<br></pre> | n/a | yes |
+| dns\_names | A list of DNS domain names to register the certificate for. The fist one is the cetificate's common name, the primary domain that the certificate will be recognized for. | `list(string)` | n/a | yes |
+| min\_days\_remaining | ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed. | `number` | `30` | no |
 
 ## Outputs
 
