@@ -17,8 +17,8 @@ repos:
         args:
         - --license-filepath
         - .license_header.txt
-  # - repo: git://github.com/antonbabenko/pre-commit-terraform
-  #   rev: v1.16.0
-  #   hooks:
-  #     - id: terraform_fmt
-  #     - id: terraform_docs
+  - repo: git://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.16.0
+    hooks:
+      - id: terraform_fmt
+      - id: terraform_docs
