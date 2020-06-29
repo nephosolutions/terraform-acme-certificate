@@ -37,6 +37,12 @@ module "acme_certificate" {
 * The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.letsencrypt.org/directory` for staging
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12 |
+
 ## Providers
 
 | Name | Version |
@@ -49,10 +55,10 @@ module "acme_certificate" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | acme\_account\_id | The ACME account ID | `any` | n/a | yes |
 | acme\_account\_private\_key | The ACME account private key used to request the certificate. | `any` | n/a | yes |
-| dns\_challenge | The [DNS challenge\|https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges] to use in fulfilling the request. | <pre>object({<br>    config   = map(string)<br>    provider = string<br>  })<br></pre> | n/a | yes |
+| dns\_challenge | The [DNS challenge\|https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges] to use in fulfilling the request. | <pre>object({<br>    config   = map(string)<br>    provider = string<br>  })</pre> | n/a | yes |
 | dns\_names | A list of DNS domain names to register the certificate for. The fist one is the cetificate's common name, the primary domain that the certificate will be recognized for. | `list(string)` | n/a | yes |
 | min\_days\_remaining | ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed. | `number` | `30` | no |
 

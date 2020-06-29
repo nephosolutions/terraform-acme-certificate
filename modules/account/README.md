@@ -22,6 +22,12 @@ module "acme_account" {
 The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.letsencrypt.org/directory` for staging.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12 |
+
 ## Providers
 
 | Name | Version |
@@ -32,7 +38,7 @@ The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.let
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | email\_address | The contact email address for the account. | `any` | n/a | yes |
 
 ## Outputs
