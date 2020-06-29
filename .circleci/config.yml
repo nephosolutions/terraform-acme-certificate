@@ -16,7 +16,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: nephosolutions/terraform:0.12.8
+      - image: nephosolutions/terraform
     steps:
       - checkout
       - run:
@@ -27,18 +27,3 @@ jobs:
           name: Run inegration tests with Test-Kitchen-Terraform
           command: |
             bundle exec kitchen test --destroy=always
-workflows:
-  version: 2
-  commit:
-    jobs:
-      - build
-  weekly:
-    triggers:
-      - schedule:
-          cron: "0 0 * * 0"
-          filters:
-            branches:
-              only:
-                - master
-    jobs:
-      - build
