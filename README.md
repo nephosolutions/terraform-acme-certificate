@@ -31,8 +31,8 @@ module "acme_certificate" {
   dns_challenge = {
     provider = "dnsimple"
 
-    config {
-      DNSIMPLE_OAUTH_TOKEN = "${var.dnsimple_token}"
+    config = {
+      DNSIMPLE_OAUTH_TOKEN = var.dnsimple_token
     }
   }
 }
