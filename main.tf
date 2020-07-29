@@ -23,8 +23,7 @@ module "acme_certificate" {
 
   acme_account_id          = module.acme_account.id
   acme_account_private_key = module.acme_account.private_key
-
-  dns_challenge = var.dns_challenge
-
-  dns_names = var.dns_names
+  dns_challenge            = var.dns_challenge
+  dns_names                = var.dns_names
+  recursive_nameservers    = var.recursive_nameservers != [] ? var.recursive_nameservers : null
 }

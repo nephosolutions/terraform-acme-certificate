@@ -34,3 +34,8 @@ variable "min_days_remaining" {
   description = "ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed."
   default     = 30
 }
+
+variable "recursive_nameservers" {
+  description = "The recursive nameservers that will be used to check for propagation of the challenge record. Defaults to your system-configured DNS resolvers."
+  default     = []
+}
