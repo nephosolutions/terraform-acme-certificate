@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- Implement attribute recursive_nameservers
+
 ## [2.0.0] - 2020-02-03
 
 - Terraform 0.12 compatibility

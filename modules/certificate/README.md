@@ -61,6 +61,7 @@ module "acme_certificate" {
 | dns\_challenge | The [DNS challenge\|https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges] to use in fulfilling the request. | <pre>object({<br>    config   = map(string)<br>    provider = string<br>  })</pre> | n/a | yes |
 | dns\_names | A list of DNS domain names to register the certificate for. The fist one is the cetificate's common name, the primary domain that the certificate will be recognized for. | `list(string)` | n/a | yes |
 | min\_days\_remaining | ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed. | `number` | `30` | no |
+| recursive\_nameservers | The recursive nameservers that will be used to check for propagation of the challenge record. Defaults to your system-configured DNS resolvers. | `list` | `[]` | no |
 
 ## Outputs
 

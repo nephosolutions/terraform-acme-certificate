@@ -40,6 +40,7 @@ resource "acme_certificate" "certificate" {
   account_key_pem         = var.acme_account_private_key
   certificate_request_pem = tls_cert_request.certificate.cert_request_pem
   min_days_remaining      = var.min_days_remaining
+  recursive_nameservers   = var.recursive_nameservers != [] ? var.recursive_nameservers : null
 
   dynamic "dns_challenge" {
     for_each = [var.dns_challenge]

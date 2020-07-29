@@ -60,6 +60,7 @@ No provider.
 | dns\_names | A list of DNS domain names to register the certificate for. The fist one is the cetificate's common name, the primary domain that the certificate will be recognized for. | `list(string)` | n/a | yes |
 | email\_address | The contact email address for the account. | `any` | n/a | yes |
 | min\_days\_remaining | ration of a certificate before a renewal is attempted. A value of less than 0 means that the certificate will never be renewed. | `number` | `30` | no |
+| recursive\_nameservers | The recursive nameservers that will be used to check for propagation of the challenge record. Defaults to your system-configured DNS resolvers. | `list` | `[]` | no |
 
 ## Outputs
 
