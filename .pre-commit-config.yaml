@@ -10,7 +10,7 @@ repos:
       - id: check-case-conflict
       - id: check-merge-conflict
   - repo: git://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.1.7
+    rev: v1.1.9
     hooks:
       - id: insert-license
         files: (Gemfile|Makefile|.*\.(tf(vars)?|y?ml))$
