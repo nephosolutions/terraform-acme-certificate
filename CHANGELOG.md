@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [2.1.0] - 2020-07-29
+
 - Implement attribute recursive_nameservers
 
 ## [2.0.0] - 2020-02-03
@@ -31,7 +33,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release
 
-[Unreleased]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v1.0.2...v1.1.0
 [1.0.2]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v1.0.1...v1.0.2
