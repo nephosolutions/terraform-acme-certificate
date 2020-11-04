@@ -4,8 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.0.0]
+
 - remove the private_key from the certificate fullchain
 - output the issuer_pem as separate attribute
+- add Terraform v0.13 compatibility
 
 ## [2.1.0] - 2020-07-29
 
@@ -36,7 +39,8 @@ All notable changes to this project will be documented in this file.
 
 - Initial release
 
-[Unreleased]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v2.1.0...HEAD
+[Unreleased]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v2.1.0...v3.0.0
 [2.1.0]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v1.1.0...v2.0.0
 [1.1.0]: https://github.com/nephosolutions/terraform-google-gcp-project/compare/v1.0.2...v1.1.0

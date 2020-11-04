@@ -41,15 +41,18 @@ module "acme_certificate" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12 |
+| terraform | >= 0.12.26 |
+| acme | >= 1.5.0 |
+| null | >= 2.1.2 |
+| tls | >= 2.2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| acme | n/a |
-| null | n/a |
-| tls | n/a |
+| acme | >= 1.5.0 |
+| null | >= 2.1.2 |
+| tls | >= 2.2.0 |
 
 ## Inputs
 

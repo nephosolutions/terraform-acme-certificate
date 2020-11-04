@@ -14,5 +14,15 @@
 
 
 terraform {
-  required_version = ">= 0.12"
+  required_version = ">= 0.12.26"
+  required_providers {
+    acme = {
+      source  = "terraform-providers/acme"
+      version = ">= 1.5.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = ">= 2.3.0"
+    }
+  }
 }

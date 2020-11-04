@@ -26,14 +26,16 @@ The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.let
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12 |
+| terraform | >= 0.12.26 |
+| acme | >= 1.5.0 |
+| tls | >= 2.2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| acme | n/a |
-| tls | n/a |
+| acme | >= 1.5.0 |
+| tls | >= 2.2.0 |
 
 ## Inputs
 

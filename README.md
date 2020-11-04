@@ -46,7 +46,7 @@ module "acme_certificate" {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12 |
+| terraform | >= 0.12.26 |
 
 ## Providers
 
