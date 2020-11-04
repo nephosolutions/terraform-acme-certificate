@@ -13,5 +13,5 @@
 # limitations under the License.
 
 source "https://rubygems.org/" do
-  gem "kitchen-terraform"
+  gem "kitchen-terraform", "~> 5.5.0"
 end

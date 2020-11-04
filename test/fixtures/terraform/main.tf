@@ -25,7 +25,7 @@ resource "random_id" "dns_name_2" {
 }
 
 module "acme_certificate" {
-  source = "../../../"
+  source = "../../.."
 
   dns_challenge = var.dns_challenge
 
