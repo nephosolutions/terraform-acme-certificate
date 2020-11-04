@@ -12,17 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-output "certificate" {
-  description = "The requested ACME certificate"
-  value       = module.acme_certificate.certificate
+output "certificate_pem" {
+  description = "The certificate in PEM format."
+  value       = module.acme_certificate.certificate_pem
 }
 
-output "private_key" {
+output "fullchain_pem" {
+  description = "The certificate concatenated with the intermediate certificate of the issuer."
+  value       = module.acme_certificate.fullchain_pem
+}
+
+output "issuer_pem" {
+  description = "The intermediate certificate of the issuer."
+  value       = module.acme_certificate.issuer_pem
+}
+
+output "private_key_pem" {
   description = "The requested ACME certificate private key"
-  value       = module.acme_certificate.private_key
-}
-
-output "fullchain" {
-  description = "The requested ACME certificate full chain"
-  value       = module.acme_certificate.fullchain
+  value       = module.acme_certificate.private_key_pem
 }

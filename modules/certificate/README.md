@@ -49,7 +49,6 @@ module "acme_certificate" {
 |------|---------|
 | acme | n/a |
 | null | n/a |
-| template | n/a |
 | tls | n/a |
 
 ## Inputs
@@ -67,9 +66,10 @@ module "acme_certificate" {
 
 | Name | Description |
 |------|-------------|
-| certificate | The requested ACME certificate |
-| fullchain | The requested ACME certificate full chain |
-| private\_key | The requested ACME certificate private key |
+| certificate\_pem | The certificate in PEM format. |
+| fullchain\_pem | The certificate concatenated with the intermediate certificate of the issuer. |
+| issuer\_pem | The intermediate certificate of the issuer. |
+| private\_key\_pem | The certificate's private key, in PEM format. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 

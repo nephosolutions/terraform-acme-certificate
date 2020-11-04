@@ -54,13 +54,3 @@ resource "acme_certificate" "certificate" {
     create_before_destroy = true
   }
 }
-
-data "template_file" "fullchain" {
-  template = "$${certificate}$${private_key}$${ca_certificate}"
-
-  vars = {
-    certificate    = acme_certificate.certificate.certificate_pem
-    private_key    = tls_private_key.certificate.private_key_pem
-    ca_certificate = acme_certificate.certificate.issuer_pem
-  }
-}

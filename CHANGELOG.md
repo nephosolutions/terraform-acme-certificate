@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+- remove the private_key from the certificate fullchain
+- output the issuer_pem as separate attribute
+
 ## [2.1.0] - 2020-07-29
 
 - Implement attribute recursive_nameservers
