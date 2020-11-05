@@ -12,6 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+output "certificate_domain" {
+  description = "The common name of the certificate."
+  value       = "${random_pet.dns_name_1.id}.${var.dns_domain}"
+}
+
 output "certificate_pem" {
   description = "The certificate in PEM format."
   value       = module.acme_certificate.certificate_pem

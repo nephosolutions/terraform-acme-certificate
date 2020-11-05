@@ -12,17 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-output "certificate" {
-  description = "The requested ACME certificate"
-  value       = module.acme_certificate.certificate
+provider "acme" {
+  server_url = "https://acme-staging-v02.api.letsencrypt.org/directory"
 }
 
-output "private_key" {
-  description = "The requested ACME certificate private key"
-  value       = module.acme_certificate.private_key
+resource "random_pet" "dns_name_1" {
 }
 
-output "fullchain" {
-  description = "The requested ACME certificate full chain"
-  value       = module.acme_certificate.fullchain
+resource "random_id" "dns_name_2" {
+  byte_length = 4
+  prefix      = "${random_pet.dns_name_1.id}-"
+}
+
+module "acme_certificate" {
+  source = "../../.."
+
+  dns_challenge = var.dns_challenge
+
+  dns_names = [
+    "${random_pet.dns_name_1.id}.${var.dns_domain}",
+    "${lower(random_id.dns_name_2.hex)}.${var.dns_domain}",
+  ]
+
+  email_address = var.email_address
 }

@@ -12,18 +12,43 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-version: 2
-jobs:
-  build:
+version: 2.1
+
+executors:
+  terraform12:
     docker:
-      - image: nephosolutions/terraform
+      - image: nephosolutions/terraform:0.12.29
+  terraform13:
+    docker:
+      - image: nephosolutions/terraform:0.13.5
+
+commands:
+  testkitchen:
+    description: Install and run Test Kitchen
     steps:
-      - checkout
       - run:
-          name: Install Test-Kitchen & Inspec
+          name: Install Test Kitchen & Inspec
           command: |
             bundle install
       - run:
-          name: Run inegration tests with Test-Kitchen-Terraform
+          name: Run inegration tests with Test Kitchen - Terraform
           command: |
             bundle exec kitchen test --destroy=always
+
+jobs:
+  terraform12:
+    executor: terraform12
+    steps:
+      - checkout
+      - testkitchen
+  terraform13:
+    executor: terraform13
+    steps:
+      - checkout
+      - testkitchen
+
+workflows:
+  main:
+    jobs:
+      - terraform12
+      - terraform13

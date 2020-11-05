@@ -14,11 +14,9 @@
 
 driver:
   name: terraform
+  root_module_directory: test/fixtures/terraform
 
 provisioner:
-  name: terraform
-
-verifier:
   name: terraform
 
 platforms:
@@ -27,9 +25,14 @@ platforms:
       variables:
         dns_domain: "<%= ENV['DNSIMPLE_DOMAIN'] %>"
       variable_files:
-        - test/integration/acme-certificate/dnsimple.tfvars
+        - test/fixtures/terraform/dnsimple.tfvars
+
+verifier:
+  name: terraform
+  color: false
+  systems:
+    - name: letsencrypt
+      backend: local
 
 suites:
-  - name: acme-certificate
-    driver:
-      root_module_directory: test/integration/acme-certificate
+  - name: letsencrypt
