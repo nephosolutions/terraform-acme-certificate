@@ -19,7 +19,7 @@ provider "acme" {
 
 module "acme_certificate" {
   source  = "nephosolutions/certificate/acme"
-  version = "2.0.0"
+  version = "3.0.1"
 
   dns_names     = [
     "www.example.com",
@@ -52,6 +52,17 @@ module "acme_certificate" {
 
 No provider.
 
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| acme_account | ./modules/account |  |
+| acme_certificate | ./modules/certificate |  |
+
+## Resources
+
+No resources.
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -70,7 +81,6 @@ No provider.
 | fullchain\_pem | The certificate concatenated with the intermediate certificate of the issuer. |
 | issuer\_pem | The intermediate certificate of the issuer. |
 | private\_key\_pem | The requested ACME certificate private key |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 [1]: https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges

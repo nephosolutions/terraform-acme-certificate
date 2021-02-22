@@ -54,6 +54,19 @@ module "acme_certificate" {
 | null | >= 2.1.2 |
 | tls | >= 2.2.0 |
 
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [acme_certificate](https://registry.terraform.io/providers/vancluever/acme/1.5.0/docs/resources/certificate) |
+| [null_resource](https://registry.terraform.io/providers/hashicorp/null/2.1.2/docs/resources/resource) |
+| [tls_cert_request](https://registry.terraform.io/providers/hashicorp/tls/2.2.0/docs/resources/cert_request) |
+| [tls_private_key](https://registry.terraform.io/providers/hashicorp/tls/2.2.0/docs/resources/private_key) |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -73,7 +86,6 @@ module "acme_certificate" {
 | fullchain\_pem | The certificate concatenated with the intermediate certificate of the issuer. |
 | issuer\_pem | The intermediate certificate of the issuer. |
 | private\_key\_pem | The certificate's private key, in PEM format. |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 [1]: https://www.terraform.io/docs/providers/acme/r/certificate.html#using-dns-challenges

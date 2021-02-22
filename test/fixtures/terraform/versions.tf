@@ -14,10 +14,9 @@
 
 
 terraform {
-  required_version = ">= 0.12.26"
   required_providers {
     acme = {
-      source  = "terraform-providers/acme"
+      source  = "vancluever/acme"
       version = ">= 1.5.0"
     }
     random = {
@@ -25,4 +24,5 @@ terraform {
       version = ">= 2.3.0"
     }
   }
+  required_version = ">= 0.12.26"
 }

@@ -37,6 +37,17 @@ The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.let
 | acme | >= 1.5.0 |
 | tls | >= 2.2.0 |
 
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [acme_registration](https://registry.terraform.io/providers/vancluever/acme/1.5.0/docs/resources/registration) |
+| [tls_private_key](https://registry.terraform.io/providers/hashicorp/tls/2.2.0/docs/resources/private_key) |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -50,5 +61,4 @@ The ACME provider's `server_url` can be set to `https://acme-staging-v02.api.let
 | id | The ACME account ID |
 | private\_key | The ACME account private key |
 | registration\_url | The ACME account registration URL |
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
